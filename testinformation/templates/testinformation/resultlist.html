@@ -1,0 +1,21 @@
+{% extends "labguide/base.html" %}
+{% load crispy_forms_tags %}
+	
+
+	{% block content%}
+
+
+
+	{% for result in results %}
+	
+	<ul>
+		<li><a class="btn" href="{% url 'multipleinfo' %}" id="multipleinfo">{{ result.test_name}}</a></li>
+	</ul>
+	
+	{% endfor %}
+	{% endblock content %}
+
+
+
+
+

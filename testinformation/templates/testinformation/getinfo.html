@@ -1,0 +1,193 @@
+{% extends "labguide/base.html" %}
+{% load crispy_forms_tags %}
+	
+
+
+	{% block content%}
+
+
+
+	
+
+	
+
+	<div class="opening" id="remove">
+		
+		<p>Welcome to OSU James Laboratory Test Information Database</p>
+
+	</div>	
+	
+	<form id="searchform"  method="get" action="" accept-charset="utf-8">
+	  <label for="searchbox">Enter Test Name or Synonym:</label>
+	  <input id="searchbox" name="search_res" type="text" placeholder="Search">
+	  <input  type="submit" value="Submit">
+	</form>
+
+	{% for result in results %}
+		
+	<div class="btn-group" role="group" aria-label="Basic example" id="buttonnav">
+	  <button type="button" class="btn btn-secondary"><a href="#general" class="inpagenav">General </a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#methodology" class="inpagenav">Methodology </a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#tubetypes" class="inpagenav">Tubetype </a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#details" class="inpagenav">Details </a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#stability" class="inpagenav">Stability </a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#outreach" class="inpagenav">Outreach</a></button>
+	  <button type="button" class="btn btn-secondary"><a href="#misc" class="inpagenav">Miscellaneous</a></button>	 <a> 	  	  	  
+	</div>
+
+
+
+
+	<div class="info">
+		<h3 id="general">General Test Information</h3>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>Test Name</th>
+					<th>Synonym</th>
+					<th>EAP</th>
+					<th>Labs</th>
+					<th>Instrument</th>
+				</tr>
+				<tr>	
+				</tr>
+					<td>{{ result.test_name}}</td>
+					<td>{{ result.synonym}}</td>
+					<td>{{ result.eap}}</td>
+					<td>{{ result.labs}}</td>
+					<td>{{ result.instrument}}</td>
+			</table>
+		<hr>
+	</div>
+
+	<div class="info">	
+
+		<h3 id="methodology">Methodology/Reaction Type</h3>
+		<p>{{ result.methodology}}</p>
+
+	</div>
+
+
+	<hr>
+
+	<div class="info">
+		<h3 id="tubetypes">Appropriate Tubetypes</h3>
+		<p>{{ result.appropriate_tubetype}} 
+		
+	<div/>	
+
+	<hr>	
+
+	<div>
+		<h3 id="details">Test Details</h3>
+			<div>
+				<h6>Reference Range:</h6>
+				<p class="reference">{{ result.reference_range}} </p>
+			</div>
+			<div>
+				<h6>Units:</h6>
+				<p class="reference">{{ result.units}} </p>
+			</div>
+			<div>
+				<h6>AMR:</h6>
+				<p class="reference">{{ result.amr}} </p>	
+			</div>
+
+			<div>
+				<h6>Reportable Range:</h6>
+				<p class="reference">{{ result.reportable_range}} </p>
+			</div>	
+			<div>
+				<h6>Source of Reference Range:</h6>
+				<p class="reference">{{ result.source_of_reference_range}}</p>
+			<div>
+				<h6>Avaliability/TAT:</h6>
+				<p class="reference">{{ result.avaliability}}</p>
+
+
+			</div>
+	</div>
+
+
+	<hr>
+
+	</div>
+	<div class="info">
+		<h3 id="stability">Stability</h3>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>Room Temp Stability</th>
+					<th>Refrigerated Stablity/if applicable Frozen Stability</th>
+				</tr>
+				<tr>	
+				</tr>
+					<td>{{ result.room_temp_stability}}</td>
+					<td>{{ result.refrigerated_stability}}</td>
+			</table>
+		
+	</div>
+
+	<hr>
+
+	<div>
+		
+		<h3 id="outreach">Outreach and Special Instructions</h3>
+			<div>
+				<h6>Outreach:</h6>
+				<p class="reference">{{ result.outreach_notes}} </p>
+			</div>
+
+			<div>
+				<h6>Special Instructions:</h6>
+				<p class="reference">{{ result.special_instructions}} </p>	
+			</div>
+
+
+	</div>
+
+	<hr>
+
+	<div>
+		
+	<div>
+		<h3 id="misc">Miscellaneous Information</h3>
+			<div>
+				<h6 id="subdiscipline">Subdiscipline:</h6>
+				<p class="reference">{{ result.subdiscipline}} </p>
+			</div>
+
+			<div>
+				<h6>Profciency Testing:</h6>
+				<p class="reference">{{ result.profciency_testing}} </p>	
+			</div>
+
+			<div>
+				<h6>Primary Instrument:</h6>
+				<p class="reference">{{ result.primary_instrument}} </p>
+			</div>	
+			<div>
+				<h6>Complexity:</h6>
+				<p class="reference">{{ result.complexity}}</p>
+
+			</div>
+			<div>
+				<h6>Regulated Analyte:</h6>
+				<p class="reference">{{ result.regulated_analyte}}</p>
+
+			</div>
+			<div>
+				<h6>CPT Codes:</h6>
+				<p class="reference">{{ result.cpt_codes}}</p>
+
+			</div>
+	</div>
+
+
+
+	</div>
+
+	{% endfor %}
+	{% endblock content %}
+
+

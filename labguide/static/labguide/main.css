@@ -1,0 +1,128 @@
+body {
+background: rgb(232,232,232);
+background: linear-gradient(90deg, rgba(232,232,232,1) 0%, rgba(245,245,240,1) 100%);
+}
+
+.container {
+
+  color: black;
+}
+
+.searchbar {
+
+  position: absolute;
+  top: 50px;
+
+}
+
+
+#searchform {
+
+  margin-bottom: 100px;
+
+}
+
+.info {
+
+  margin-bottom: 30px;
+}
+
+
+.reference {
+
+  display: inline;
+  vertical-align: top;
+
+}
+
+h6 {
+
+  display: inline;
+}
+
+main {
+
+  margin-top: 80px;
+}
+
+
+hr {
+
+   border: 0.25px solid black;
+}
+
+.opening {
+
+  margin-top: 20px;
+  text-decoration: bold;
+}
+
+#buttonnav {
+
+  margin-bottom: 30px;
+
+}
+
+.color {
+
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 10px solid rgba(0, 0, 0, .2);
+}
+
+.lavendar {
+  background: #967bb6;
+}
+
+.mintgreen {
+
+  background: #98ff98;
+}
+
+.gold {
+
+  background: #e8b923;
+  left: 1.25px;
+}
+
+.sodiumcitrate {
+
+  background: #44a6c6;
+  left: 1.25px;
+
+}
+.inpagenav {
+
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.3em;
+} 
+
+.inpagenav:hover {
+
+  color: inherit;
+}
+
+button.link {
+
+  background: none;
+  border: none;
+  display: block;
+}
+
+
+#stack {
+
+  display: block;
+  margin-bottom:  10px;
+}
+
+#multipleinfo {
+
+  display: block;
+  text-align: left;
+}
